@@ -90,7 +90,7 @@ class QQ {
             // Step1: download QRcode
             const qrCode = await this.client.get({ url: URL.qrcode, responseType: 'arraybuffer' });
             await writeFileAsync(qrcodePath, qrCode, 'binary');
-            log.info(`(1/5) 二维码下载到 ${qrcodePath} ，等待扫描`);
+            log.info(`(1/5) 二维码从 ${URL.qrcode} 下载到 ${qrcodePath} ，等待扫描`);
             // open file, only for linux
             childProcess.exec(`xdg-open ${qrcodePath}`);
 
